@@ -49,7 +49,7 @@ var _ = Describe("E2E TEST:SearchCommits", func() {
 			repoClient := githubrepo.CreateGithubRepoClient(context.Background(), logger)
 			err = repoClient.InitRepo(repo, clients.HeadSHA, 0)
 			Expect(err).Should(BeNil())
-			_, err = repoClient.SearchCommits(clients.SearchCommitsOptions{Author: "thisuserdoesnotexists"})
+			_, err = repoClient.SearchCommits(clients.SearchCommitsOptions{Author: "thisuserdoesnotexist"})
 			Expect(err).ShouldNot(BeNil())
 		})
 	})
